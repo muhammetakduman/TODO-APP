@@ -1,12 +1,20 @@
 import TodoCreate from "./components/TodoCreate.jsx"
 import './App.css'
 import TodoList from "./components/TodoList"
+import { useState } from "react"
 function App() {
+
+  const [todos, setTodo] = useState([]);
+
+  const createTodo = (newTodo) => {
+    setTodo([...todos, newTodo]);
+  }
+  console.log(todos);
 
   return (
     <div className='app'>
-      <div style={{ width: '500px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-        <TodoCreate />
+      <div className="main">
+        <TodoCreate justTodo={createTodo} />
         <TodoList />
       </div>
 
