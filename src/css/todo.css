@@ -3,7 +3,8 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    border: solid 1px lightgray
+    border: solid 1px lightgray;
+    margin-top: 10px;
 }
 
 .todo-icons {

@@ -3,6 +3,10 @@ import '../css/todocreate.css'
 function TodoCreate({ justTodo }) {
     const [newTodo, setnewTodo] = useState('');
 
+    const clearInput = () => {
+        setnewTodo('');
+    }
+
     const createTodo = () => {
         if (!newTodo) return;
         const request = {
@@ -10,6 +14,7 @@ function TodoCreate({ justTodo }) {
             content: newTodo
         }
         justTodo(request)
+        clearInput();
     }
     return (
         <div className='todo-create'>
